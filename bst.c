@@ -111,22 +111,21 @@ void removeData(Tree * t, Data d){
 void removeLeaf(Tree * t, Node * n){
   printf("hi\n");
   printf("remove %d\n",n->data.value);
-  //printf("its parent is %d\n",n->parent->data.value);
   if(n->parent == NULL){
     printf("this is root\n");
     t->root = NULL;
-    //free(n);
-    //n = NULL;
+    free(n);
+    n = NULL;
     printf("done\n");
   }
   else{
     if(n->parent->left == n){
       printf("reamoveleftleaf\n");
-      free(n->parent->left);
+      //free(n->parent->left);
       n->parent->left = NULL;
     }else{
       printf("reamoverightleaf\n");
-      free(n->parent->right);
+      //free(n->parent->right);
       n->parent->right = NULL;
     }
   }
