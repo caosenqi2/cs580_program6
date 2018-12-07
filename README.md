@@ -6,10 +6,10 @@
 - Your program must pass all tests to be accepted
 
 ## REFERENCES:
-- List any outside resources used
+- None
 
 ## MISCELLANEOUS COMMENTS:
-- Anything you would like the grader to know
+- None
 
 # Assignment Description
 ## Program 6 - Binary Search Trees
