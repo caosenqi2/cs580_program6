@@ -32,7 +32,7 @@ Data * insert(Tree * bst, Data data){
     insertNode(bst->root, data);
 };
 
-void insertNode(Node * n, Data d){
+Node * insertNode(Node * n, Data d){
   if(d.value < n->data.value){
     if(n->left == NULL)
       n->left = newNode(d, n);
@@ -44,6 +44,7 @@ void insertNode(Node * n, Data d){
     else
       insertNode(n->right, d);
   }
+  else return NULL;
 }
 
 void sort(Tree * bst, Data * data){

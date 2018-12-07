@@ -28,7 +28,7 @@ typedef struct Tree{
 Node * newNode(Data d, Node * parent);
 Tree * newTree();
 Data * insert(Tree * bst, Data data);
-void insertNode(Node * n, Data d);
+Node * insertNode(Node * n, Data d);
 Data * search(Tree * bst, Data data);
 Node * searchNode(Node * n, Data d);
 
