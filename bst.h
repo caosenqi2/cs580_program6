@@ -1,7 +1,6 @@
 #ifndef BST_H
 #define BST_H
 
-
 typedef struct Data{
   int value;
 } Data;
@@ -47,6 +46,5 @@ void sort(Tree * bst, Data * data);
 void sortArray(Node * bst, Data * data, int * j);
 void delete(Tree * bst);
 void deleteHelper(Tree * t, Node * n);
-
 
 #endif

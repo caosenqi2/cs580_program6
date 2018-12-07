@@ -115,12 +115,10 @@ void removeLeaf(Tree * t, Node * n){
   }
   else{
     if(n->parent->left == n){
-      printf("reamoveleftleaf\n");
       //free(n->parent->left);
       //free(n);
       n->parent->left = NULL;
     }else{
-      printf("reamoverightleaf\n");
       //free(n->parent->right);
       //free(n);
       n->parent->right = NULL;
