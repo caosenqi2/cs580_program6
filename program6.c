@@ -165,7 +165,7 @@ int main(){
 	printf("\n\t\tTest #14: Passed ...\n\n");
 
 	printf("\n\t=========Test #15: Remove Root as Leaf ===========\n\n");
-  printf("root is %d, parent is null: %d\n",bst->root->data.value, bst->root->parent == NULL);
+
 	bst->removeData(bst, (Data) {9});
 	bst->removeData(bst, (Data) {8});
 	bst->removeData(bst, (Data) {13});
