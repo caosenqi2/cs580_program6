@@ -138,7 +138,7 @@ int main(){
 	printf("\n\t\tTest #12: Passed ...\n\n");
 
 	printf("\n\t=========Test #13: Remove Root with 2 Branches===========\n\n");
-  printf("begin\n");
+
   bst->removeData(bst, (Data) {5});
 	Tree * test13 = newTree();
 	int test13_data[] = {6,12,3,4,8,2,9,13};

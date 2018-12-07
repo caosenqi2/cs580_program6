@@ -97,11 +97,9 @@ void removeData(Tree * t, Data d){
     if(to_delete->left == NULL && to_delete->right == NULL)
       removeLeaf(t, to_delete);
     else if(to_delete->left == NULL || to_delete->right == NULL){
-      printf("branch\n");
       shortCircuit(t, to_delete);
     }
     else{
-      printf("find it\n");
       promotion(t, to_delete);
     }
       
@@ -109,14 +107,11 @@ void removeData(Tree * t, Data d){
 };
 
 void removeLeaf(Tree * t, Node * n){
-  printf("hi\n");
-  printf("remove %d\n",n->data.value);
+
   if(n->parent == NULL){
-    printf("this is root\n");
     t->root = NULL;
     free(n);
     n = NULL;
-    printf("done\n");
   }
   else{
     if(n->parent->left == n){
@@ -136,7 +131,6 @@ void removeLeaf(Tree * t, Node * n){
 };
 
 void shortCircuit(Tree * t, Node * n){
-  printf("removing %d\n",n->data.value);
   if (n->parent == NULL){
     if(n->left != NULL){
       t->root = n->left;
@@ -145,21 +139,16 @@ void shortCircuit(Tree * t, Node * n){
     }
     else{
       t->root = n->right;
-      printf("root updated %d\n",t->root->data.value);
-      printf("n %d\n",n->data.value);
+
       free(t->root->parent);
       t->root->parent = NULL;
     }
     //free(n);
     //n = NULL;
-    //printf("root updated %d\n",n->data.value);
-    //printf("root updated %d\n",t->root->parent->data.value);
-    printf("done!\n");
   }
   else{
     if(n->parent->left == n){
       if(n->left != NULL){
-        printf("leftleftcase\n");
         n->parent->left = n->left;
         n->left->parent = n->parent;
       }else{
@@ -177,18 +166,14 @@ void shortCircuit(Tree * t, Node * n){
         n->left->parent = n->parent;
       }
     }
-    printf("shortcurcuit\n");
     free(n);
     n = NULL; 
-    printf("done!\n");
   }
   
   
 };
 
 Node * findMaxLeft(Node * n){
-  printf("parent %d\n",n->parent->data.value);
-  printf("fingding %d\n",n->data.value);
   if(n->right == NULL){
     
     return n;}
@@ -200,7 +185,6 @@ Node * findMinRight(Node * n){
   n = n->right;
   while(n->left != NULL){
     n = n->left;
-    printf("finding %d\n",n->data.value);
   }
   return n;
 };
@@ -208,12 +192,9 @@ Node * findMinRight(Node * n){
 void promotion(Tree * t, Node * n){
 
   Node * promote = findMinRight(n);
-  printf("parent of %d is %d\n",promote->data.value, promote->parent->data.value);
   n->data = promote->data;
   
   if(promote->left == NULL && promote->right == NULL){
-    printf("leaf value%d\n",promote->data.value);
-    printf("leaf's parent value%d\n",promote->parent->data.value);
     removeLeaf(t, promote);
   }
   else{
@@ -249,7 +230,7 @@ int compare(Tree * bst, Tree * copy){
 
 int compareHelper(Node * node1, Node * node2){
   if (node1 != NULL && node2 != NULL){
-    printf("node1: %d, node2: %d\n", node1->data.value, node2->data.value);
+    //printf("node1: %d, node2: %d\n", node1->data.value, node2->data.value);
     if(node1->data.value != node2->data.value) return 0;
     compareHelper(node1->left, node2->left);
     compareHelper(node1->right, node2->right);
