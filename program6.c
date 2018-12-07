@@ -40,12 +40,13 @@ int main(){
 	assert(bst->insert(bst, (Data){9}) == NULL);
 
 	printf("\n\t\tTest #3: Passed ...\n\n");
-
+	
 	printf("\n\t=========Test #4: Sort search===========\n\n");
 
 	bst->sort(bst, test);
 	Data prev = test[0];
 	for (i = 1; i < num_data; i++){
+	  printf("i:%d value:%d\n",i,test[i].value);
 		Data next = test[i];
 		fprintf(stderr, "%d < %d\n ", prev.value, next.value);
 		assert(prev.value <= next.value);
@@ -70,7 +71,7 @@ int main(){
 	printf("\n\t\tTest #6: Passed ...\n\n");
 
 	printf("\n\t=========Test #7: Clone and Compare Tree===========\n\n");
-
+	
 	Tree * copy_bst = bst->clone(bst);
 	int compare_result = bst->compare(NULL, copy_bst);
 	assert(compare_result == 0);
@@ -137,8 +138,8 @@ int main(){
 	printf("\n\t\tTest #12: Passed ...\n\n");
 
 	printf("\n\t=========Test #13: Remove Root with 2 Branches===========\n\n");
-
-	bst->removeData(bst, (Data) {5});
+  printf("begin\n");
+  bst->removeData(bst, (Data) {5});
 	Tree * test13 = newTree();
 	int test13_data[] = {6,12,3,4,8,2,9,13};
 	for (i = 0; i < num_data-5; i++){
@@ -164,7 +165,7 @@ int main(){
 	printf("\n\t\tTest #14: Passed ...\n\n");
 
 	printf("\n\t=========Test #15: Remove Root as Leaf ===========\n\n");
-
+  printf("root is %d, parent is null: %d\n",bst->root->data.value, bst->root->parent == NULL);
 	bst->removeData(bst, (Data) {9});
 	bst->removeData(bst, (Data) {8});
 	bst->removeData(bst, (Data) {13});
