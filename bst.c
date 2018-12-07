@@ -115,8 +115,8 @@ void removeLeaf(Tree * t, Node * n){
   if(n->parent == NULL){
     printf("this is root\n");
     t->root = NULL;
-    free(n);
-    n = NULL;
+    //free(n);
+    //n = NULL;
     printf("done\n");
   }
   else{
